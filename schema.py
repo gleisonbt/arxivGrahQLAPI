@@ -49,7 +49,7 @@ class Entry(ObjectType):
     published_parsed = List(Int)
     pdf_url = String()
     affiliation = String()
-    published = DateTime()
+    published = String()
     arxiv_comment = String()
     links = Field(List(Link))
     title = String()
