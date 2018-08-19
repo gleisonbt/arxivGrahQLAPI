@@ -69,7 +69,7 @@ class Query(ObjectType):
                 sort_by=String(required=False), sort_order=String(required=False))
     
     def resolve_entries(self, info, search_query, max_results, start, sort_by, sort_order):
-        entries = arxiv.query(search_query=search_query,id_list=[],max_results=max_results, sort_by=sort_by, sort_order=sort_order)
+        entries = arxiv.query(search_query=search_query,id_list=[],max_results=max_results, start=start, sort_by=sort_by, sort_order=sort_order)
         return json2obj(json.dumps(entries))
     
     entry = List(Entry, id=ID(required=True))
